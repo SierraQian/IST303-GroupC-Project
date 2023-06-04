@@ -22,5 +22,3 @@ Stakeholders:
 4. Compliance and Risk Management 
 5. IT Department 
 6. Clients
-
-Test

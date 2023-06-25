@@ -42,12 +42,23 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 
 # PART B
 
-<!-- We need to answer the following questions by Monday, June 26 at 4:59 PM
-1. Decompose your user stories into tasks.
-2. Outline what features will be in Milestone 1.0 of your project.
-3. Build the iterations (at most 2) that will compose your Milestone 1.0. Record the total days of work and the time it will take for your team to complete that work.
-4. Allocate tasks to each team member and record the allocation.
-5. Create a burn down chart for monitoring your team’s progress.
-6. Include evidence that you are meeting for periodic stand up meetings with your teammates.
-7. Ensure that your development and testing environment is set up. Be sure to have some working functional (however rudimentary) and test code in your repository.
- -->
+# Decompose your user stories into tasks
+TBD
+
+# Outline what features will be in Milestone 1.0 of your project
+TBD
+
+# Build the iterations (at most 2) that will compose your Milestone 1.0. Record the total days of work and the time it will take for your team to complete that work
+TBD
+
+# Allocate tasks to each team member and record the allocation
+TBD
+
+# Create a burn down chart for monitoring your team’s progress
+TBD
+
+# Include evidence that you are meeting for periodic stand up meetings with your teammates
+TBD
+
+# Ensure that your development and testing environment is set up. Be sure to have some working functional (however rudimentary) and test code in your repository
+TBD

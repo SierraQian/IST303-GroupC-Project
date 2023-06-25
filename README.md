@@ -3,7 +3,7 @@
 Shengjie Qian, Josue Carames, Nicholas Colletta, Norah Aldaghmi
 
 
-PART A
+# PART A
 
 # App Title (TBD) 
 
@@ -33,7 +33,7 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 5. IT Department 
 6. Clients
 
-PART B
+# PART B
 
 <!-- We need to answer the following questions by Monday, June 26 at 4:59 PM
 1. Decompose your user stories into tasks.

@@ -120,7 +120,7 @@ Milestone 1.0 of the economic calendar website project will focus on delivering 
 
 1. User Registration and Authentication:
    - User registration functionality to allow traders and admin users to create accounts.
-   - User authentication system to enable secure login and session management.
+   - User authentication system to enable secure login and session management (including login and logout function).
 
 2. Account Management:
    - User profile page where traders can view and edit their account information, such as username and password.
@@ -227,22 +227,7 @@ Iteration 2: Default Indicators, Upcoming Events, and Admin Account
 - Estimated Effort: 14 days
 
 Here's a potential burn down chart to monitor the team's progress:
-
-   |      
-20 |                    .
-   |                  
-   |                 .
-   |                 
-   |             .   
-   |             
-10 |          .
-   |       
-   |      
-   |    
-   | 
- 0 |______________________________
-   0         5          10         15
-				Days
+![Picture1](https://github.com/SierraQian/IST303-GroupC-Project/assets/133469784/48341b33-bbfd-47c9-ba22-ceb74488d6c7)
 
 The vertical axis represents the remaining effort in days, while the horizontal axis represents the number of days elapsed. The line indicates the planned effort burn down over time.
 

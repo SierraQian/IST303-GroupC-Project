@@ -1,7 +1,7 @@
 # IST303-GroupC-Project
-# Team members:
-Shengjie Qian, Josue Carames, Nicholas Colletta, Norah Aldaghmi
 
+# Team members:
+Xu Chen, Shengjie Qian, Josue Carames, Nicholas Colletta, Norah Aldaghmi
 
 # PART A
 
@@ -22,7 +22,7 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 2. As an admin user, I want to choose the indicators show on the page and the method of calculate the expected value. (frontend: 1 week, backend 1 week)  
 3. As a trader, I want to have an account to login, and could edit my username and password.  
 4. As a trader, I want to manipulate and save my own dashboard to see the indicators I am interested in.  
-5. As a trader, I want to view a list of upcoming economic events and their expected impact on the market, so I can plan my trading strategies accordingly. 
+5. As a trader, I want to view a list of upcoming economic events and their expected impact on the market, so I can plan my trading strategies accordingly.
 6. As a trader without an account, I want to view the default indicators and upcoming events.
 
 <!-- A few more stories to be approved by the team:

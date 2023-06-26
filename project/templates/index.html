@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Economic Calendar</title>
+</head>
+<body>
+	<h1>Economic Calendar</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Indicator</th>
+				<th>Previous Value</th>
+				<th>Next Publish Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for event in calendar %}
+			<tr>
+				<td>{{ event.indicator_id }}</td>
+				<td>{{ event.previous_value }}</td>
+				<td>{{ event.next_publish_date }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>

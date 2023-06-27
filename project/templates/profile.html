@@ -4,7 +4,21 @@
 <h1 class="title">
   Welcome, {{ name }}!
 </h1>
+<h1>Economic Calendar</h1>
+<table>
+    <tr>
+        <th>Indicator ID</th>
+        <th>Previous Value</th>
+        <th>Next Publish Date</th>
+    </tr>
+    {% for event in economic_calendar %}
+    <tr>
+        <td>{{ event.indicator_id }}</td>
+        <td>{{ event.previous_value }}</td>
+        <td>{{ event.next_publish_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
 {% endblock %}
-
-
 

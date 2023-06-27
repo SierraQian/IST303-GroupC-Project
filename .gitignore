@@ -7,6 +7,7 @@
 # Ignore logs and temporary files
 logs/
 temp/
+__pycache__/
 *.log
 *.tmp
 

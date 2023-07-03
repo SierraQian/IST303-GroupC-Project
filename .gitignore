@@ -13,6 +13,7 @@ project/__pycache__/
 
 # Ignore a specific directory and its contents
 .git/
+venv/
 
 # Ignore all files with a specific extension
 *.log

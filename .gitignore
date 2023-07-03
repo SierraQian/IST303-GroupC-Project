@@ -11,6 +11,9 @@ project/__pycache__/
 *.log
 *.tmp
 
+# Ignore database files
+instance/db.sqlite
+
 # Ignore a specific directory and its contents
 .git/
 venv/

@@ -2,10 +2,7 @@ from flask import Flask, Blueprint, render_template
 from flask_login import login_required, current_user
 from . import db
 import requests
-<<<<<<< HEAD
 import os
-=======
->>>>>>> main
 
 main = Blueprint('main', __name__)
 
@@ -15,11 +12,7 @@ def index():
 	return render_template('index.html')
 
 def get_fred_data(indicator):
-<<<<<<< HEAD
 	fred_api_key = os.getenv('FRED_API_KEY', '8bf74e8cf0c1a4bfcde0f5db0436df43') # Create an environment variable after requesting your own FRED API key
-=======
-	fred_api_key = '8bf74e8cf0c1a4bfcde0f5db0436df43' # replace with your own FRED API key
->>>>>>> main
 	url = f"https://api.stlouisfed.org/fred/series/observations?series_id={indicator}&api_key={fred_api_key}&file_type=json"
 	response = requests.get(url)
 	data = response.json()

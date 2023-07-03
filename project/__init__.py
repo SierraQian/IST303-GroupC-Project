@@ -32,8 +32,4 @@ def create_app():
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    # blueprint for 
-    from .fred import fred as fred_blueprint
-    app.register_blueprint(fred_blueprint)
-
     return app

@@ -1,24 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  Welcome, {{ name }}!
-</h1>
-<h1>Economic Calendar</h1>
-<table>
-    <tr>
-        <th>Indicator ID</th>
-        <th>Previous Value</th>
-        <th>Next Publish Date</th>
-    </tr>
-    {% for event in economic_calendar %}
-    <tr>
-        <td>{{ event.indicator_id }}</td>
-        <td>{{ event.previous_value }}</td>
-        <td>{{ event.next_publish_date }}</td>
-    </tr>
-    {% endfor %}
+<h1 class="title"></h1>
+<h2>Economic Calendar</h2>
+
+<!-- dashboard.html -->
+<table class="table">
+  <tr>
+    <th>Indicator</th>
+    <th>Value</th>
+  </tr>
+  {% for indicator, value in fred_data.items() %}
+  <tr>
+    <td>{{ indicator }}</td>
+    <td>{{ value }}</td>
+  </tr>
+  {% endfor %}
 </table>
 
 {% endblock %}
-

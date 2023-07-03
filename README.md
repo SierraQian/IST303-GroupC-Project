@@ -3,13 +3,12 @@
 1. First, start with creating the project directory: mkdir <App_Name>
 2. Next, navigate to the project directory: cd <App_Name>
 3. Pull request from git@github.com:SierraQian/IST303-GroupC-Project.git via SSH to get latest version or https://github.com/SierraQian/IST303-GroupC-Project.git via HTTPS
-4. Create a Python environment if you don’t have one: python3 -m venv auth
-5. Next, run the following command: source auth/bin/activate This command will activate the virtual environment.
-6. Run the following command from your virtual environment to install the needed packages: pip install flask flask-sqlalchemy flask-login
-7. In a terminal, you can set the FLASK_APP and FLASK_DEBUG values: export FLASK_APP=project && export FLASK_DEBUG=1
-8. Next, navigate to the project directory: cd <App_Name>
-9. Run in a terminal: flask run
-10. You should be able to type in a Internet browser of your choice the following to see the web application: http://localhost:5000 or alternatively http://127.0.0.1:5000
+4. OPTIONAL: Create a Python environment if you don’t have one: python3 -m venv venv
+5. OPTIONAL: Next, run the following command: source venv/bin/activate This command will activate the virtual environment.
+6. Run the following command from the project directory to install the needed packages: pip3 install -r requirements.txt
+7. In a terminal, you can set the FLASK_APP and FLASK_DEBUG values as follows: export FLASK_APP=project && export FLASK_DEBUG=1
+8. Run in a terminal: flask run
+9. You should be able to type in a Internet browser of your choice the following to see the web application: http://localhost:5000 or alternatively http://127.0.0.1:5000
 
 # IST303-GroupC-Project
 

@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">Welcome back, {{ name }}!</h1>
-<h2>Economic Calendar Dashboard</h2>
+<h1>{% block title %} Welcome back, {{ name }}! {% endblock %}</h1>
+<h2>Your Economic Calendar Dashboard</h2>
 
 <!-- dashboard.html -->
 <table class="table">

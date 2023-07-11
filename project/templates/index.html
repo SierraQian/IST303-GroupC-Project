@@ -1,10 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  Economic Calendar
-</h1>
+<h1>{% block title %} Economic Calendar {% endblock %}</h1>
 <h2 class="subtitle">
-  Welcome Back!
+  Here is today's economic highlights
 </h2>
+
+<!-- dashboard.html -->
+<table class="table">
+  <tr>
+    <th>Indicator</th>
+    <th>Value</th>
+  </tr>
+  {% for indicator, value in fred_data.items() %}
+  <tr>
+    <td>{{ indicator }}</td>
+    <td>{{ value }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
 {% endblock %}

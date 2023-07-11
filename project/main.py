@@ -9,7 +9,8 @@ main = Blueprint('main', __name__)
 @main.route('/')
 @main.route('/home')
 def index():
-	return render_template('index.html')
+	fred_data = dashboard()
+	return render_template('index.html', fred_data=fred_data)
 
 def get_fred_data(indicator):
 	fred_api_key = os.getenv('FRED_API_KEY', '8bf74e8cf0c1a4bfcde0f5db0436df43') # Create an environment variable after requesting your own FRED API key

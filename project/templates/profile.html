@@ -2,8 +2,13 @@
 
 {% block content %}
 <h1>{% block title %} Welcome back, {{ name }}! {% endblock %}</h1>
+<a href="{{ url_for('main.index') }}">
+  <span class="badge badge-warning">Edit Profile</span>
+</a>
 <h2>Your Economic Calendar Dashboard</h2>
-
+<a href="{{ url_for('main.index') }}">
+  <span class="badge badge-warning">Create Your Economic Calendar </span>
+</a>
 <!-- dashboard.html -->
 <table class="table">
   <tr>

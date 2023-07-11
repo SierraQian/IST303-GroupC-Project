@@ -3,6 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required
 from .models import User
 from . import db
+from sqlalchemy.exc import IntegrityError
 
 auth = Blueprint('auth', __name__)
 
@@ -44,6 +45,11 @@ def signup_post():
     if user: # if a user is found, we want to redirect back to signup page so user can try again  
         flash('Email address already exists')
         return redirect(url_for('auth.signup'))
+    else:
+        existing_user = User.query.filter_by(name=name).first()
+        if existing_user:
+            flash('Username already exists.')
+            return redirect(url_for('auth.signup'))
 
     # create new user with the form data. Hash the password so plaintext version isn't saved.
     new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
@@ -53,6 +59,46 @@ def signup_post():
     db.session.commit()
 
     return redirect(url_for('auth.login'))
+
+@auth.route('/update-profile')
+@login_required
+def update_profile():
+    return render_template('update-profile.html')
+
+@auth.route('/update-profile', methods=['POST'])
+@login_required
+def update_profile_post():
+
+    email = request.form.get('email')
+    name = request.form.get('name')
+    password = request.form.get('password')
+
+    # Fetch the user from the database based on the authenticated user
+    user = User.query.filter_by(email=email).first()
+
+    # Perform necessary checks and update the user profile
+    if user:
+        # Check if the password meets the required criteria
+        if password == user.password:
+            flash('New password must be different from the current password.')
+            return redirect(url_for('auth.update_profile'))
+
+        # Check if the username is available
+        if name != user.name:
+            existing_user = User.query.filter_by(name=name).first()
+            if existing_user:
+                flash('Username already exists.')
+                return redirect(url_for('auth.update_profile'))
+
+        # Update the user profile in the database
+        user.name = name
+        user.password = password
+
+        db.session.commit()
+        return redirect(url_for('main.profile'))
+    else:
+        flash('Please enter correct email.')
+        return redirect(url_for('auth.update_profile'))
 
 @auth.route('/logout')
 @login_required

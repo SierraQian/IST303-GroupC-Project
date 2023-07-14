@@ -69,20 +69,7 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 	 - Implement user registration and login functionality (3 days)
 	 - Store user account information securely (2 days)
 
-2. As an admin user, I want to be able to choose the indicators shown on the page and define the method used to calculate the expected value, so that I can customize the economic calendar according to specific requirements. (Frontend: 1 week, Backend: 1 week)
-
-   Tasks:
-   - Frontend:
-	 - Design and implement a settings page for indicators (3 days)
-	 - Create a user interface for selecting indicators (2 days)
-	 - Implement user interface for defining calculation methods (2 days)
-
-   - Backend:
-	 - Develop a data model to store indicator settings (2 days)
-	 - Implement backend APIs for fetching available indicators (3 days)
-	 - Store and retrieve indicator settings from the database (2 days)
-
-3. As a trader, I want to have an account to log in and be able to edit my username and password, so that I can manage my account information securely.
+2. As a trader, I want to have an account to log in and be able to edit my username and password, so that I can manage my account information securely.
 
    Tasks:
    - Frontend:
@@ -93,7 +80,18 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 	 - Implement APIs for user account management (3 days)
 	 - Validate and update user account information (2 days)
 
-4. As a trader, I want to be able to manipulate and save my own dashboard to see the indicators I am interested in, allowing me to personalize my trading experience.
+3. As a trader without an account, I want to view the default indicators and upcoming events, enabling me to access basic information about the economic calendar even without a registered account.
+
+   Tasks:
+   - Frontend:
+	 - Design and implement a landing page with default indicators (2 days)
+	 - Display upcoming events on the landing page (1 day)
+
+   - Backend:
+	 - Set up default indicator configuration (1 day)
+	 - Provide APIs to fetch default indicators and upcoming events (2 days)
+
+<!-- 4. As a trader, I want to be able to manipulate and save my own dashboard to see the indicators I am interested in, allowing me to personalize my trading experience.
 
    Tasks:
    - Frontend:
@@ -113,18 +111,20 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 
    - Backend:
 	 - Set up data source integration for retrieving economic event information (2 days)
-	 - Implement APIs to fetch upcoming events and their impact (3 days)
+	 - Implement APIs to fetch upcoming events and their impact (3 days) -->
 
-6. As a trader without an account, I want to view the default indicators and upcoming events, enabling me to access basic information about the economic calendar even without a registered account.
+<!-- 6. As an admin user, I want to be able to choose the indicators shown on the page and define the method used to calculate the expected value, so that I can customize the economic calendar according to specific requirements. (Frontend: 1 week, Backend: 1 week)
 
    Tasks:
    - Frontend:
-	 - Design and implement a landing page with default indicators (2 days)
-	 - Display upcoming events on the landing page (1 day)
+	 - Design and implement a settings page for indicators (3 days)
+	 - Create a user interface for selecting indicators (2 days)
+	 - Implement user interface for defining calculation methods (2 days)
 
    - Backend:
-	 - Set up default indicator configuration (1 day)
-	 - Provide APIs to fetch default indicators and upcoming events (2 days)
+	 - Develop a data model to store indicator settings (2 days)
+	 - Implement backend APIs for fetching available indicators (3 days)
+	 - Store and retrieve indicator settings from the database (2 days) -->
 
 # Outline what features will be in Milestone 1.0 of your project
 

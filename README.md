@@ -37,13 +37,6 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 5. As a trader, I want to view a list of upcoming economic events and their expected impact on the market, so I can plan my trading strategies accordingly.
 6. As a trader without an account, I want to view the default indicators and upcoming events.
 
-<!-- A few more stories to be approved by the team:
-7. As a user, I want to be able to filter economic events by country, so that I can focus on the events that are most relevant to me.
-8. As a user, I want to receive notifications for important economic events, so that I don't miss out on crucial information and can plan my activities accordingly.
-9. As an administrator, I want to be able to add, edit, and remove economic events from the calendar, so that the website stays up-to-date with the latest information.
-10. As a user, I want to be able to access historical economic data and view past events, so that I can analyze trends and make informed predictions based on past performance.
--->
-
 # Stakeholders: 
 1. Senior Management 
 2. Operations Team 
@@ -77,7 +70,7 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 	 - Design and implement a form for editing username and password (2 days)
 
    - Backend:
-	 - Implement APIs for user account management (3 days)
+	 - Implement backend system for user account management (3 days)
 	 - Validate and update user account information (2 days)
 
 3. As a trader without an account, I want to view the default indicators and upcoming events, enabling me to access basic information about the economic calendar even without a registered account.

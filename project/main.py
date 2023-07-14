@@ -18,7 +18,8 @@ def get_fred_data(indicator):
 	response = requests.get(url)
 	data = response.json()
 	latest_data_point = data['observations'][-1]['value']
-	return latest_data_point
+	latest_data_point_date = data['observations'][-1]['date']
+	return latest_data_point, latest_data_point_date
 
 def dashboard():
 	indicator_ids = ['GDPC1', 'CPIAUCSL', 'UNRATE', 'PAYEMS', 'A191RL1Q225SBEA', 'MORTGAGE30US', 'PSAVERT', 'FEDFUNDS', 'SP500', 'VIXCLS']

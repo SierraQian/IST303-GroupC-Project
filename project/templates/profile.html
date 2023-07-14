@@ -1,24 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
+<br />
 <h1>{% block title %} Welcome back, {{ name }}! {% endblock %}</h1>
+<br />
 <a href="{{ url_for('auth.update_profile') }}">
   <span class="badge badge-warning">Edit Profile</span>
 </a>
+<br />
 <h2>Your Economic Calendar Dashboard</h2>
+<br />
 <a href="{{ url_for('main.index') }}">
   <span class="badge badge-warning">Create Your Economic Calendar </span>
 </a>
+<br />
 <!-- dashboard.html -->
 <table class="table">
   <tr>
     <th>Indicator</th>
     <th>Value</th>
+    <th>Date</th>
   </tr>
-  {% for indicator, value in fred_data.items() %}
+  {% for indicator, (value, date) in fred_data.items() %}
   <tr>
     <td>{{ indicator }}</td>
     <td>{{ value }}</td>
+    <td>{{ date }}</td>
   </tr>
   {% endfor %}
 </table>

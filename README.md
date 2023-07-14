@@ -17,7 +17,7 @@ Xu Chen, Shengjie Qian, Josue Carames, Nicholas Colletta, Norah Aldaghmi
 
 # PART A
 
-# App Title (TBD) 
+# App Title: Economic Calendar 
 
 # Concept: 
 A website that shows an economic calendar that updates on a weekly basis. In the background, it would take the most popular time series indicators from the website FRED and show various features of the most popular indicators. Some of the various factors it would list:  

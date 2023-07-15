@@ -4,15 +4,12 @@
 <br />
 <h1>{% block title %} Welcome back, {{ name }}! {% endblock %}</h1>
 <br />
-<a href="{{ url_for('auth.update_profile') }}">
-  <span class="badge badge-warning">Edit Profile</span>
-</a>
-<br />
 <h2>Your Economic Calendar Dashboard</h2>
 <br />
 <a href="{{ url_for('main.index') }}">
   <span class="badge badge-warning">Create Your Economic Calendar </span>
 </a>
+<br />
 <br />
 <!-- dashboard.html -->
 <table class="table">

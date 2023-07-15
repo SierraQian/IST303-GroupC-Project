@@ -22,46 +22,19 @@
 <table class="table">
   <tr>
     <th>Indicator</th>
+    <th>Title</th>
     <th>Value</th>
+    <th>Date</th>
   </tr>
-  {% for indicator, value in fred_data.items() %}
+  {% for indicator, (title, value, date) in fred_data.items() %}
   <tr>
     <td>{{ indicator }}</td>
+    <td>{{ title }}</td>
     <td>{{ value }}</td>
-  </tr>
+    <td>{{ date }}</td>
   {% endfor %}
+  </tr>
 </table>
-
-<!-- <p>
-  Here is an example of what it looks like:
-</p>
-
-<table class="table">
-  <tr>
-      <th>Date</th>
-      <th>Event</th>
-      <th>Country</th>
-      <th>Previous</th>
-      <th>Forecast</th>
-      <th>Actual</th>
-  </tr>
-  <tr>
-      <td>2023-07-15</td>
-      <td>Interest Rate Decision</td>
-      <td>USA</td>
-      <td>0.25%</td>
-      <td>0.25%</td>
-      <td>0.25%</td>
-  </tr>
-  <tr>
-      <td>2023-07-16</td>
-      <td>GDP Growth Rate</td>
-      <td>UK</td>
-      <td>1.2%</td>
-      <td>1.3%</td>
-      <td></td>
-  </tr>
-</table> -->
 
 {% if not current_user.is_authenticated %}
 <br />

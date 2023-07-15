@@ -18,16 +18,18 @@
 <table class="table">
   <tr>
     <th>Indicator</th>
+    <th>Title</th>
     <th>Value</th>
     <th>Date</th>
   </tr>
-  {% for indicator, (value, date) in fred_data.items() %}
+  {% for indicator, (title, value, date) in fred_data.items() %}
   <tr>
     <td>{{ indicator }}</td>
+    <td>{{ title }}</td>
     <td>{{ value }}</td>
     <td>{{ date }}</td>
-  </tr>
   {% endfor %}
+  </tr>
 </table>
 
 {% endblock %}

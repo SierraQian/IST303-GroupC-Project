@@ -285,3 +285,7 @@ General steps:
 
 7. Commit and Push:
    - Use the VCS to commit and push your code to the repository, ensuring that your functional and test code is safely stored and version controlled.
+
+# Part C
+
+<a href="https://docs.google.com/presentation/d/1ni1wBBxDgJWjzWgd-ISLGnQGoXP8ufWI1rC_jBP3ebY/edit?usp=sharing">Presentation</a>

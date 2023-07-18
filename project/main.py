@@ -1,20 +1,13 @@
-from flask import Flask, Blueprint, render_template
+from flask import Flask, Blueprint, render_template, request
 from flask_login import login_required, current_user
 from . import db
-import requests
-import os
+import requests, os
 
 main = Blueprint('main', __name__)
 
-@main.route('/')
-@main.route('/home')
-def index():
-	fred_data = dashboard()
-	return render_template('index.html', fred_data=fred_data)
-
 # FRED API
 
-def get_fred_data(indicator):
+def get_standard_data(indicator):
     fred_api_key = os.getenv('FRED_API_KEY', '8bf74e8cf0c1a4bfcde0f5db0436df43')
     url_series = f"https://api.stlouisfed.org/fred/series?series_id={indicator}&api_key={fred_api_key}&file_type=json" # Get an economic data series
     url_observations = f"https://api.stlouisfed.org/fred/series/observations?series_id={indicator}&api_key={fred_api_key}&file_type=json" # Get the observations or data values for an economic data series
@@ -47,13 +40,45 @@ def get_fred_data(indicator):
     return series_title, latest_data_point_value, latest_data_point_date, previous_data_point_value, previous_data_point_date
 
 
-def dashboard():
-	indicator_ids = ['GDPC1', 'CPIAUCSL', 'UNRATE', 'PAYEMS', 'A191RL1Q225SBEA', 'MORTGAGE30US', 'PSAVERT', 'FEDFUNDS', 'SP500', 'VIXCLS']
-	fred_data = {indicator: get_fred_data(indicator) for indicator in indicator_ids}
-	return fred_data
+def get_standard_data_dashboard():
+        indicator_ids = ['GDPC1', 'CPIAUCSL', 'UNRATE', 'PAYEMS', 'A191RL1Q225SBEA', 'MORTGAGE30US', 'PSAVERT', 'FEDFUNDS', 'SP500', 'VIXCLS']
+        standard_data = {indicator: get_standard_data(indicator) for indicator in indicator_ids}
+        return standard_data
+    
+def customized_dashboard(indicator_ids, standard_data):
+    if not indicator_ids:
+        return standard_data
+    else:
+        return {indicator: get_standard_data(indicator) for indicator in indicator_ids}
 
-@main.route('/profile')
+@main.route('/')
+@main.route('/home')
+def index():
+    standard_data = get_standard_data_dashboard()
+    return render_template('index.html', standard_data=standard_data)
+
+# @main.route('/profile', methods=['GET', 'POST'])  # Allow both GET and POST requests
+# @login_required
+# def profile():
+#     indicator_ids = request.form.getlist('indicator_ids')
+#     standard_data = get_standard_data_dashboard()
+#     customized_data = customized_dashboard(indicator_ids, standard_data)
+#     return render_template('profile.html', name=current_user.name, customized_data=customized_data)
+
+@main.route('/profile', methods=['GET', 'POST'])  # Allow both GET and POST requests
 @login_required
 def profile():
-	fred_data = dashboard()
-	return render_template('profile.html', name=current_user.name, fred_data=fred_data)
+    standard_data = get_standard_data_dashboard()
+    if request.method == 'POST':  # If the route is accessed via POST request (i.e., the form was submitted)
+        indicator_ids = request.form.getlist('indicator_ids')  # Get the selected indicator IDs from the POST data
+        customized_data = customized_dashboard(indicator_ids, standard_data)  # Generate the customized data
+    else:  # If the route is accessed via GET request
+        customized_data = standard_data  # Use the standard data
+    return render_template('profile.html', name=current_user.name, customized_data=customized_data)
+
+
+
+@main.route('/indicator-form')
+@login_required
+def indicator_form():
+    return render_template('indicators-form.html')

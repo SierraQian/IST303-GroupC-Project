@@ -28,7 +28,7 @@
     <th>Previous Value</th>
     <th>Previous Date</th>
   </tr>
-  {% for indicator, (title, value, date, previous_value, previous_date) in fred_data.items() %}
+  {% for indicator, (title, value, date, previous_value, previous_date) in standard_data.items() %}
   <tr>
     <td>{{ indicator }}</td>
     <td>{{ title }}</td>

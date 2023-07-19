@@ -30,42 +30,41 @@ def get_standard_data(indicator):
 		previous_data_point_value = "N/A"
 		previous_data_point_date = "N/A"
 
-	# Leverage float_to_money()
-	
-	try:
-		latest_data_point_value = float_to_money(data_observations['observations'][-1]['value'])
-		latest_data_point_date = data_observations['observations'][-1]['date']
-	except (KeyError, IndexError): 
-		latest_data_point_value = "N/A"
-		latest_data_point_date = "N/A"
-	
-	try:
-		previous_data_point_value = float_to_money(data_observations['observations'][-2]['value'])
-		previous_data_point_date = data_observations['observations'][-2]['date']
-	except (KeyError, IndexError): 
-		previous_data_point_value = "N/A"
-		previous_data_point_date = "N/A"
+	# # Leverage float_to_money()
+	# 
+	# try:
+	# 	latest_data_point_value = float_to_money(data_observations['observations'][-1]['value'])
+	# 	latest_data_point_date = data_observations['observations'][-1]['date']
+	# except (KeyError, IndexError): 
+	# 	latest_data_point_value = "N/A"
+	# 	latest_data_point_date = "N/A"
+	# 
+	# try:
+	# 	previous_data_point_value = float_to_money(data_observations['observations'][-2]['value'])
+	# 	previous_data_point_date = data_observations['observations'][-2]['date']
+	# except (KeyError, IndexError): 
+	# 	previous_data_point_value = "N/A"
+	# 	previous_data_point_date = "N/A"
 	
 	return series_title, latest_data_point_value, latest_data_point_date, previous_data_point_value, previous_data_point_date
-
 
 def get_standard_data_dashboard():
 		indicator_ids = ['GDPC1', 'CPIAUCSL', 'UNRATE', 'PAYEMS', 'A191RL1Q225SBEA', 'MORTGAGE30US', 'PSAVERT', 'FEDFUNDS', 'SP500', 'VIXCLS']
 		standard_data = {indicator: get_standard_data(indicator) for indicator in indicator_ids}
 		return standard_data
-	
+
 def customized_dashboard(indicator_ids, standard_data):
 	if not indicator_ids:
 		return standard_data
 	else:
 		return {indicator: get_standard_data(indicator) for indicator in indicator_ids}
 		
-# Convert Integers into a readable format (Money)
-		
-def float_to_money(amount, currency_symbol="$"):
-	try:
-		amount = float(amount)
-		return f"{currency_symbol}{amount:,.2f}"
-	except ValueError:  # raised when trying to convert a string that doesn't represent a number
-		return amount
+# # Convert Integers into a readable format (Money)
+# 		
+# def float_to_money(amount, currency_symbol="$"):
+# 	try:
+# 		amount = float(amount)
+# 		return f"{currency_symbol}{amount:,.2f}"
+# 	except ValueError:  # raised when trying to convert a string that doesn't represent a number
+# 		return amount
 

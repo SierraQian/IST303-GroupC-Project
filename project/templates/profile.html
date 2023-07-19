@@ -4,7 +4,7 @@
 <br />
 <h1>{% block title %} Welcome back, {{ name }}! {% endblock %}</h1>
 <!-- Standard Title -->
-{% if not current_user.indicators %}
+{% if current_user.indicators %}
 <br />
 <h2>Your Economic Calendar Dashboard</h2>
 <br />

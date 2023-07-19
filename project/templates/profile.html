@@ -45,7 +45,7 @@
   </tr>
 </table>
 <br />
-
+{% if current_user.indicators %}
 <!-- Chart -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <canvas id="myChart"></canvas>
@@ -83,6 +83,6 @@
     });
 </script>
 <br />
-
+{% endif %}
 
 {% endblock %}

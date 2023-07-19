@@ -36,6 +36,7 @@ def profile():
     
     return render_template('profile.html', name=current_user.name, customized_data=customized_data, current_user=current_user)  
 
+
 @main.route('/update-profile', methods=['POST'])
 @login_required
 def update_profile():

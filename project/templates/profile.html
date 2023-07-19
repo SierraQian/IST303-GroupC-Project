@@ -3,15 +3,25 @@
 {% block content %}
 <br />
 <h1>{% block title %} Welcome back, {{ name }}! {% endblock %}</h1>
+<!-- Standard Title -->
+{% if not current_user.indicators %}
 <br />
 <h2>Your Economic Calendar Dashboard</h2>
 <br />
-<!-- {% if not current_user.is_authenticated %} This button needs to show only if users have not yet created a personalized dashboard-->
+{% endif %}
+<!-- Customized Title -->
+{% if not current_user.indicators %}
+<br />
+<h2>Economic Calendar Dashboard</h2>
+<br />
+{% endif %}
+<!-- Button to create a customized dashboard -->
+{% if not current_user.indicators %}
 <a href="{{ url_for('main.indicator_form') }}">
   <button type="button" class="btn btn-warning">Create Your Customized Economic Calendar</button>
 </a>
 <br />
-<!-- {% endif %} -->
+{% endif %}
 <br />
 <!-- dashboard.html -->
 <table class="table">

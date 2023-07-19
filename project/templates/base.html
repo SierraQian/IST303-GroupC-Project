@@ -28,6 +28,12 @@
                 <li>
                     <a class="dropdown-item" href="{{ url_for('auth.update_profile') }}">Edit Account</a>
                 </li>
+                <!-- If user has created a customized dashboard, show "Edit Dashboard" button -->
+                {% if current_user.indicators %}
+                <li>
+                    <a class="dropdown-item" href="{{ url_for('main.indicator_form') }}">Edit Dashboard</a>
+                </li>
+                {% endif %}
             </ul>
         </li>
         {% endif %}

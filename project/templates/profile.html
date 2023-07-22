@@ -2,7 +2,7 @@
 
 {% block content %}
 <br />
-<h1>{% block title %} Welcome back, {{ name }}! {% endblock %}</h1>
+<h1>Welcome back, {{ name }}!</h1>
 <!-- Standard Title -->
 {% if current_user.indicators %}
 <br />
@@ -41,47 +41,65 @@
     <td>{{ date }}</td>
     <td>{{ previous_value }}</td>
     <td>{{ previous_date }}</td>
-  {% endfor %}
   </tr>
+  {% endfor %}
 </table>
 <br />
 {% if current_user.indicators %}
 <!-- Chart -->
+<div style="height: 50vh;">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <canvas id="myChart"></canvas>
 <script type="text/javascript">
-    var customized_data = {{ customized_data|tojson }};
-</script>
-<script type="text/javascript">
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: Object.keys(customized_data),  // Get indicator names
-            datasets: [{
-                label: 'Value',
-                data: Object.values(customized_data).map(item => item[1]),  // Get value
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
+    document.addEventListener("DOMContentLoaded", function() { // Wait for HTML elements to load, then, execute script
+        var customized_data = {{ customized_data|tojson }}; // Convert values to JSON
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(customized_data),  // Get indicator names
+                datasets: [
+                    {
+                        label: 'Previous Value',
+                        data: Object.values(customized_data).map(item => item[3]),  // Get previous value
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Value',
+                        data: Object.values(customized_data).map(item => item[1]),  // Get value
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }
+                ]
             },
-            {
-                label: 'Previous Value',
-                data: Object.values(customized_data).map(item => item[3]),  // Get previous value
-                backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                borderColor: 'rgba(153, 102, 255, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+            options: {
+                responsive: true, 
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    zoom: {
+                        pan: {
+                            enabled: true,
+                            mode: 'xy'
+                        },
+                        zoom: {
+                            enabled: true,
+                            mode: 'xy',
+                        }
+                    }
                 }
             }
-        }
+        });
     });
 </script>
+</div>
 <br />
 {% endif %}
 

@@ -1,73 +1,87 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %} {% endblock %}</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <!-- Navigation -->
     <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{ url_for('main.index') }}">Home</a>
-        </li>
-        {% if current_user.is_authenticated %}
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{{ url_for('main.profile') }}" role="button" data-bs-toggle="dropdown">Profile</a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a class="dropdown-item" href="{{ url_for('main.profile') }}">Dashboard</a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="{{ url_for('auth.update_profile') }}">Edit Account</a>
-                </li>
-                <!-- If user has created a customized dashboard, show "Edit Dashboard" button -->
-                {% if current_user.indicators %}
-                <li>
-                    <a class="dropdown-item" href="{{ url_for('main.indicator_form') }}">Edit Dashboard</a>
-                </li>
-                {% endif %}
-            </ul>
-        </li>
-        {% endif %}
-        {% if not current_user.is_authenticated %}
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
-        </li>
-        {% endif %}
-        {% if not current_user.is_authenticated %}
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign Up</a>
-        </li>
-        {% endif %}
-        {% if current_user.is_authenticated %}
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('auth.logout') }}">Log Out</a>
-        </li>
-        {% endif %}
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          aria-current="page"
+          href="{{ url_for('main.index') }}"
+          >Home</a
+        >
+      </li>
+      {% if current_user.is_authenticated %}
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="{{ url_for('main.profile') }}"
+          role="button"
+          data-bs-toggle="dropdown"
+          >Profile</a
+        >
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="{{ url_for('main.profile') }}"
+              >Dashboard</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="{{ url_for('auth.update_profile') }}"
+              >Edit Account</a
+            >
+          </li>
+          <!-- If user has created a customized dashboard, show "Edit Dashboard" button -->
+          {% if current_user.indicators %}
+          <li>
+            <a class="dropdown-item" href="{{ url_for('main.indicator_form') }}"
+              >Edit Dashboard</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </li>
+      {% endif %} {% if not current_user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+      </li>
+      {% endif %} {% if not current_user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign Up</a>
+      </li>
+      {% endif %} {% if current_user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('auth.logout') }}">Log Out</a>
+      </li>
+      {% endif %}
     </ul>
-
     <!-- Content -->
     <section class="hero is-primary is-fullheight">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                {% block content %}
-                {% endblock %}
-            </div>
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          {% block content %} {% endblock %}
         </div>
+      </div>
     </section>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

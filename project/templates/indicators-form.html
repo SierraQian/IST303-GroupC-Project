@@ -1,32 +1,40 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <br />
 <br />
 <form action="{{ url_for('main.profile') }}" method="post">
-  <label for="indicator_ids">Select Indicators:</label><br>
-  <input type="checkbox" id="GDPC1" name="indicator_ids" value="GDPC1">
-  <label for="GDPC1">GDPC1</label><br>
-  <input type="checkbox" id="CPIAUCSL" name="indicator_ids" value="CPIAUCSL">
-  <label for="CPIAUCSL">CPIAUCSL</label><br>
-  <input type="checkbox" id="UNRATE" name="indicator_ids" value="UNRATE">
-  <label for="UNRATE">UNRATE</label><br>
-  <input type="checkbox" id="PAYEMS" name="indicator_ids" value="PAYEMS">
-  <label for="PAYEMS">PAYEMS</label><br>
-  <input type="checkbox" id="A191RL1Q225SBEA" name="indicator_ids" value="A191RL1Q225SBEA">
-  <label for="A191RL1Q225SBEA">A191RL1Q225SBEA</label><br>
-  <input type="checkbox" id="MORTGAGE30US" name="indicator_ids" value="MORTGAGE30US">
-  <label for="MORTGAGE30US">MORTGAGE30US</label><br>
-  <input type="checkbox" id="PSAVERT" name="indicator_ids" value="PSAVERT">
-  <label for="PSAVERT">PSAVERT</label><br>
-  <input type="checkbox" id="FEDFUNDS" name="indicator_ids" value="FEDFUNDS">
-  <label for="FEDFUNDS">FEDFUNDS</label><br>
-  <input type="checkbox" id="SP500" name="indicator_ids" value="SP500">
-  <label for="SP500">SP500</label><br>
-  <input type="checkbox" id="VIXCLS" name="indicator_ids" value="VIXCLS">
-  <label for="VIXCLS">VIXCLS</label><br>
-  <input type="submit" value="Submit">
+  <label for="indicator_ids">Select Indicators:</label><br />
+  <input type="checkbox" id="GDPC1" name="indicator_ids" value="GDPC1" />
+  <label for="GDPC1">GDPC1</label><br />
+  <input type="checkbox" id="CPIAUCSL" name="indicator_ids" value="CPIAUCSL" />
+  <label for="CPIAUCSL">CPIAUCSL</label><br />
+  <input type="checkbox" id="UNRATE" name="indicator_ids" value="UNRATE" />
+  <label for="UNRATE">UNRATE</label><br />
+  <input type="checkbox" id="PAYEMS" name="indicator_ids" value="PAYEMS" />
+  <label for="PAYEMS">PAYEMS</label><br />
+  <input
+    type="checkbox"
+    id="A191RL1Q225SBEA"
+    name="indicator_ids"
+    value="A191RL1Q225SBEA"
+  />
+  <label for="A191RL1Q225SBEA">A191RL1Q225SBEA</label><br />
+  <input
+    type="checkbox"
+    id="MORTGAGE30US"
+    name="indicator_ids"
+    value="MORTGAGE30US"
+  />
+  <label for="MORTGAGE30US">MORTGAGE30US</label><br />
+  <input type="checkbox" id="PSAVERT" name="indicator_ids" value="PSAVERT" />
+  <label for="PSAVERT">PSAVERT</label><br />
+  <input type="checkbox" id="FEDFUNDS" name="indicator_ids" value="FEDFUNDS" />
+  <label for="FEDFUNDS">FEDFUNDS</label><br />
+  <input type="checkbox" id="SP500" name="indicator_ids" value="SP500" />
+  <label for="SP500">SP500</label><br />
+  <input type="checkbox" id="VIXCLS" name="indicator_ids" value="VIXCLS" />
+  <label for="VIXCLS">VIXCLS</label><br />
+  <input type="submit" value="Submit" />
 </form>
 <br />
 <br />

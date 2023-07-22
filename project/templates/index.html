@@ -1,21 +1,19 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <br />
 <h1>{% block title %} Economic Calendar {% endblock %}</h1>
 <br />
 <p>
-  An economic calendar is a schedule of data releases and news events which relate to the financial markets and the
-  economy of the world's leading economies. Economic calendars are typically used by traders and investors to monitor
-  market-moving events, such as economic indicators and monetary policy decisions. Market-moving events, which are
-  typically announced or released in a report, have the potential to move the markets and, therefore, are closely
+  An economic calendar is a schedule of data releases and news events which
+  relate to the financial markets and the economy of the world's leading
+  economies. Economic calendars are typically used by traders and investors to
+  monitor market-moving events, such as economic indicators and monetary policy
+  decisions. Market-moving events, which are typically announced or released in
+  a report, have the potential to move the markets and, therefore, are closely
   watched by traders and investors.
 </p>
 <br />
-<h2 class="subtitle">
-  Here is today's economic highlights
-</h2>
+<h2 class="subtitle">Here is today's economic highlights</h2>
 <br />
 
 <!-- dashboard.html -->
@@ -28,7 +26,8 @@
     <th>Previous Value</th>
     <th>Previous Date</th>
   </tr>
-  {% for indicator, (title, value, date, previous_value, previous_date) in standard_data.items() %}
+  {% for indicator, (title, value, date, previous_value, previous_date) in
+  standard_data.items() %}
   <tr>
     <td>{{ indicator }}</td>
     <td>{{ title }}</td>
@@ -36,19 +35,18 @@
     <td>{{ date }}</td>
     <td>{{ previous_value }}</td>
     <td>{{ previous_date }}</td>
-  {% endfor %}
+    {% endfor %}
   </tr>
 </table>
 
 {% if not current_user.is_authenticated %}
 <br />
 <p>
-  To use our economic calendar, simply sign up for an account and log in. Then, you can customize your own dashboard.
+  To use our economic calendar, simply sign up for an account and log in. Then,
+  you can customize your own dashboard.
 </p>
 <a href="{{ url_for('auth.signup') }}">
   <button type="button" class="btn btn-primary">Sign Up</button>
 </a>
 
-{% endif %}
-
-{% endblock %}
+{% endif %} {% endblock %}

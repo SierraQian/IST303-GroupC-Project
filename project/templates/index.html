@@ -17,27 +17,35 @@
 <br />
 
 <!-- dashboard.html -->
-<table class="table">
-  <tr>
-    <th>Indicator</th>
-    <th>Title</th>
-    <th>Value</th>
-    <th>Date</th>
-    <th>Previous Value</th>
-    <th>Previous Date</th>
-  </tr>
-  {% for indicator, (title, value, date, previous_value, previous_date) in
-  standard_data.items() %}
-  <tr>
-    <td>{{ indicator }}</td>
-    <td>{{ title }}</td>
-    <td>{{ value }}</td>
-    <td>{{ date }}</td>
-    <td>{{ previous_value }}</td>
-    <td>{{ previous_date }}</td>
+<div class="table-responsive">
+  <table class="table">
+    <tr>
+      <th class="text-truncate">Indicator</th>
+      <th class="text-truncate">Title</th>
+      <th class="text-truncate">Value</th>
+      <th class="text-truncate">Date</th>
+      <th class="text-truncate">Previous Value</th>
+      <th class="text-truncate">Previous Date</th>
+    </tr>
+    {% for indicator, (title, value, date, previous_value, previous_date,
+    series_notes) in standard_data.items() %}
+    <tr>
+      <td class="text-truncate">{{ indicator }}</td>
+      <td
+        data-bs-toggle="tooltip"
+        data-placement="top"
+        data-bs-title="{{ series_notes }}"
+      >
+        <a href="#" class="link-primary">{{ title|truncate(68, False) }}</a>
+      </td>
+      <td class="text-truncate">{{ value }}</td>
+      <td class="text-truncate">{{ date }}</td>
+      <td class="text-truncate">{{ previous_value }}</td>
+      <td class="text-truncate">{{ previous_date }}</td>
+    </tr>
     {% endfor %}
-  </tr>
-</table>
+  </table>
+</div>
 
 {% if not current_user.is_authenticated %}
 <br />
@@ -49,4 +57,18 @@
   <button type="button" class="btn btn-primary">Sign Up</button>
 </a>
 
-{% endif %} {% endblock %}
+{% endif %}
+
+<!-- ToolTip -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const tooltipTriggerList = Array.from(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+</script>
+
+{% endblock %}

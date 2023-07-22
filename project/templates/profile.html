@@ -23,83 +23,109 @@
 <br />
 {% endif %}
 <br />
+  
 <!-- dashboard.html -->
+<div class="table-responsive">
 <table class="table">
   <tr>
-    <th>Indicator</th>
-    <th>Title</th>
-    <th>Value</th>
-    <th>Date</th>
-    <th>Previous Value</th>
-    <th>Previous Date</th>
-  </tr>
-  {% for indicator, (title, value, date, previous_value, previous_date) in
-  customized_data.items() %}
-  <tr>
-    <td>{{ indicator }}</td>
-    <td>{{ title }}</td>
-    <td>{{ value }}</td>
-    <td>{{ date }}</td>
-    <td>{{ previous_value }}</td>
-    <td>{{ previous_date }}</td>
-  </tr>
-  {% endfor %}
-</table>
-<br />
-{% if current_user.indicators %}
-<!-- Chart -->
-<div style="height: 50vh">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <canvas id="myChart"></canvas>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function() { // Wait for HTML elements to load, then, execute script
-        var customized_data = {{ customized_data|tojson }}; // Convert values to JSON
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: Object.keys(customized_data),  // Get indicator names
-                datasets: [
-                    {
-                        label: 'Previous Value',
-                        data: Object.values(customized_data).map(item => item[3]),  // Get previous value
-                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                        borderColor: 'rgba(153, 102, 255, 1)',
-                        borderWidth: 1
-                    },
-                    {
-                        label: 'Value',
-                        data: Object.values(customized_data).map(item => item[1]),  // Get value
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                },
-                plugins: {
-                    zoom: {
-                        pan: {
-                            enabled: true,
-                            mode: 'xy'
-                        },
-                        zoom: {
-                            enabled: true,
-                            mode: 'xy',
-                        }
-                    }
-                }
-            }
-        });
-    });
-  </script>
+      <th class="text-truncate">Indicator</th>
+      <th class="text-truncate">Title</th>
+      <th class="text-truncate">Value</th>
+      <th class="text-truncate">Date</th>
+      <th class="text-truncate">Previous Value</th>
+      <th class="text-truncate">Previous Date</th>
+    </tr>
+    {% for indicator, (title, value, date, previous_value, previous_date,
+    series_notes) in customized_data.items() %}
+    <tr>
+    <td class="text-truncate">{{ indicator }}</td>
+    <td
+      data-bs-toggle="tooltip"
+      data-placement="top"
+      data-bs-title="{{ series_notes }}"
+    >
+      <a href="#" class="link-primary">{{ title|truncate(68, False) }}</a>
+    </td>
+    <td class="text-truncate">{{ value }}</td>
+    <td class="text-truncate">{{ date }}</td>
+    <td class="text-truncate">{{ previous_value }}</td>
+    <td class="text-truncate">{{ previous_date }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 </div>
-<br />
-{% endif %} {% endblock %}
+  <br />
+  {% if current_user.indicators %}
+  <!-- Chart -->
+  <div style="height: 50vh">
+    <canvas id="myChart"></canvas>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() { // Wait for HTML elements to load, then, execute script
+          var customized_data = {{ customized_data|tojson }}; // Convert values to JSON
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var myChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: Object.keys(customized_data),  // Get indicator names
+                  datasets: [
+                      {
+                          label: 'Previous Value',
+                          data: Object.values(customized_data).map(item => item[3]),  // Get previous value
+                          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                          borderColor: 'rgba(153, 102, 255, 1)',
+                          borderWidth: 1
+                      },
+                      {
+                          label: 'Value',
+                          data: Object.values(customized_data).map(item => item[1]),  // Get value
+                          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                          borderColor: 'rgba(75, 192, 192, 1)',
+                          borderWidth: 1
+                      }
+                  ]
+              },
+              options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  scales: {
+                      y: {
+                          beginAtZero: true
+                      }
+                  },
+                  plugins: {
+                      zoom: {
+                          pan: {
+                              enabled: true,
+                              mode: 'xy'
+                          },
+                          zoom: {
+                              enabled: true,
+                              mode: 'xy',
+                          }
+                      }
+                  }
+              }
+          });
+      });
+    </script>
+  </div>
+  <br />
+</td>
+{% endif %}
+
+<!-- Scripts -->
+<!-- ToolTip -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const tooltipTriggerList = Array.from(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+</script>
+<!-- Chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{% endblock %}

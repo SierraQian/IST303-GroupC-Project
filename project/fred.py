@@ -10,8 +10,10 @@ def get_standard_data(indicator):
 	
 	try:
 		series_title = data_series['seriess'][0]['title']
+		series_notes = data_series['seriess'][0]['notes']
 	except (KeyError, IndexError): # When the expected key is not found or when the list index is out of range, return N/A
 		series_title = "N/A"
+		series_notes = "N/A"
 	
 	response_observations = requests.get(url_observations)
 	data_observations = response_observations.json()
@@ -46,7 +48,7 @@ def get_standard_data(indicator):
 	# 	previous_data_point_value = "N/A"
 	# 	previous_data_point_date = "N/A"
 	
-	return series_title, latest_data_point_value, latest_data_point_date, previous_data_point_value, previous_data_point_date
+	return series_title, latest_data_point_value, latest_data_point_date, previous_data_point_value, previous_data_point_date, series_notes
 
 def get_standard_data_dashboard():
 		indicator_ids = ['GDPC1', 'CPIAUCSL', 'UNRATE', 'PAYEMS', 'A191RL1Q225SBEA', 'MORTGAGE30US', 'PSAVERT', 'FEDFUNDS', 'SP500', 'VIXCLS']

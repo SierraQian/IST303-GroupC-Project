@@ -42,9 +42,9 @@
           >{{ title|truncate(68, False) }}</a
         >
         <!--  A Jinja2 filter to truncate the title to a maximum of 68 characters without breaking words in the middle. -->
-
         <div
           class="offcanvas offcanvas-start"
+          data-bs-scroll="true"
           tabindex="-1"
           id="{{ indicator }}"
           aria-labelledby="offcanvasExampleLabel"
@@ -66,7 +66,6 @@
           </div>
         </div>
       </td>
-
       <td class="text-truncate">{{ value }}</td>
       <td class="text-truncate">{{ date }}</td>
       <td class="text-truncate">{{ previous_value }}</td>
@@ -86,29 +85,4 @@
   <button type="button" class="btn btn-primary">Sign Up</button>
 </a>
 
-{% endif %}
-
-<!-- ToolTip -->
-<script>
-  document.addEventListener("DOMContentLoaded", (event) => {
-    const tooltipTriggerList = Array.from(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    );
-    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  });
-</script>
-<!-- Popovers -->
-<script>
-  document.addEventListener("DOMContentLoaded", (event) => {
-    const popoverTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="popover"]'
-    );
-    const popoverList = [...popoverTriggerList].map(
-      (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
-    );
-  });
-</script>
-
-{% endblock %}
+{% endif %} {% endblock %}

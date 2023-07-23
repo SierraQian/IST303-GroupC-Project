@@ -31,13 +31,42 @@
     series_notes) in standard_data.items() %}
     <tr>
       <td class="text-truncate">{{ indicator }}</td>
-      <td
-        data-bs-toggle="tooltip"
-        data-placement="top"
-        data-bs-title="{{ series_notes }}"
-      >
-        <a href="#" class="link-primary">{{ title|truncate(68, False) }}</a>
+      <td data-bs-toggle="offcanvas">
+        <!-- Bootstrap attribute that will trigger the offcanvas component. -->
+        <a
+          class="link-primary"
+          data-bs-toggle="offcanvas"
+          href="#{{ indicator }}"
+          role="button"
+          aria-controls="offcanvasExample"
+          >{{ title|truncate(68, False) }}</a
+        >
+        <!--  A Jinja2 filter to truncate the title to a maximum of 68 characters without breaking words in the middle. -->
+
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="{{ indicator }}"
+          aria-labelledby="offcanvasExampleLabel"
+        >
+          <!-- Offcanvas component -->
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+              {{ title }}
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>{{ series_notes }}</div>
+          </div>
+        </div>
       </td>
+
       <td class="text-truncate">{{ value }}</td>
       <td class="text-truncate">{{ date }}</td>
       <td class="text-truncate">{{ previous_value }}</td>
@@ -68,6 +97,17 @@
     const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl);
     });
+  });
+</script>
+<!-- Popovers -->
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const popoverTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="popover"]'
+    );
+    const popoverList = [...popoverTriggerList].map(
+      (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+    );
   });
 </script>
 

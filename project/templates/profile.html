@@ -39,27 +39,33 @@
     series_notes) in customized_data.items() %}
     <tr>
       <td class="text-truncate">{{ indicator }}</td>
-      <td data-bs-toggle="offcanvas">
+      <td>
         <!-- Bootstrap attribute that will trigger the offcanvas component. -->
         <a
           class="link-primary"
           data-bs-toggle="offcanvas"
           href="#{{ indicator }}"
           role="button"
-          aria-controls="offcanvasExample"
-          >{{ title|truncate(68, False) }}</a
+          aria-controls="offcanvastitle"
         >
+          <span
+            data-bs-toggle="tooltip"
+            data-bs-title="Click on the title to read the notes"
+          >
+            {{ title|truncate(68, False) }}
+          </span>
+        </a>
         <!--  A Jinja2 filter to truncate the title to a maximum of 68 characters without breaking words in the middle. -->
         <div
           class="offcanvas offcanvas-start"
           data-bs-scroll="true"
           tabindex="-1"
           id="{{ indicator }}"
-          aria-labelledby="offcanvasExampleLabel"
+          aria-labelledby="offcanvastitle"
         >
           <!-- Offcanvas component -->
           <div class="offcanvas-header bg-secondary">
-            <h5 class="offcanvas-title text-light" id="offcanvasExampleLabel">
+            <h5 class="offcanvas-title text-light" id="offcanvastitle">
               {{ title }}
             </h5>
             <button
@@ -141,6 +147,17 @@
 {% endif %}
 
 <!-- Scripts -->
+<!-- Tooltip -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltipList = [...tooltipTriggerList].map(
+      (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
+  });
+</script>
 <!-- Chart -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

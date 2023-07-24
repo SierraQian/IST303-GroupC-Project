@@ -1,4 +1,20 @@
+/* styles.css */
+/* Customize the background color of the navbar */
+.navbar {
+  background-color: #004c00; /* Your desired background color */
+}
+
+/* Customize the text color of the navbar items */
+.navbar-nav .nav-link {
+  color: #ffffff; /* Your desired text color (white in this example) */
+}
+
+/* Customize the hover color of the navbar items (optional) */
+.navbar-nav .nav-link:hover {
+  color: #ffff00; /* Your desired hover text color (yellow in this example) */
+}
+
 /* This doesn't seem to work with Bootstrap */
 .logo-padding {
-  margin: 100 px;
+  padding: 10 px;
 }

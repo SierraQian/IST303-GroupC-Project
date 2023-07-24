@@ -3,86 +3,98 @@
 <br />
 <h1>{% block title %} Economic Calendar {% endblock %}</h1>
 <br />
-<p>
-  An economic calendar is a schedule of data releases and news events which
-  relate to the financial markets and the economy of the world's leading
-  economies. Economic calendars are typically used by traders and investors to
-  monitor market-moving events, such as economic indicators and monetary policy
-  decisions. Market-moving events, which are typically announced or released in
-  a report, have the potential to move the markets and, therefore, are closely
-  watched by traders and investors.
-</p>
-<br />
-<h2 class="subtitle">Here is today's economic highlights</h2>
-<br />
+<div class="container">
+  <div class="row">
+    <div class="col-6 text-left">
+      <p>An economic calendar dashboard is a critical resource for traders and investors, offering a detailed schedule of market-moving events, economic data releases, and news. By accessing data from the world's leading economies, this tool provides you with the latest insights that could impact your trading and investment decisions.</p>
+      <p>Each row of the <a href="#economic-calendar">economic calendar table</a> corresponds to a specific economic indicator. These include vital metrics such as Gross Domestic Product (GDPC1), Consumer Price Index (CPIAUCSL), Unemployment Rate (UNRATE), and more. Understanding these indicators can assist you in predicting market trends and making informed decisions.</p>
+      <p>By having access to these economic indicators and being able to compare current data with past figures, you'll have valuable information at your fingertips to help guide your trading and investment strategies. These highlights provide a concise and focused update that can quickly bring you up to speed on the day's economic landscape.</p>
+    </div>
+    <div class="col-6">
+      <img
+          src="{{ url_for('static', filename='images/northfolk-unsplash.jpg') }}"
+          alt="Logo"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+      <br />
+      <h2 class="subtitle" id="economic-calendar">Here is today's economic highlights</h2>
+      <br />
 
-<!-- dashboard.html -->
-<div class="table-responsive">
-  <table class="table">
-    <tr>
-      <th class="text-truncate">Indicator</th>
-      <th class="text-truncate">Title</th>
-      <th class="text-truncate">Value</th>
-      <th class="text-truncate">Date</th>
-      <th class="text-truncate">Previous Value</th>
-      <th class="text-truncate">Previous Date</th>
-    </tr>
-    {% for indicator, (title, value, date, previous_value, previous_date,
-    series_notes) in standard_data.items() %}
-    <tr>
-      <td class="text-truncate">{{ indicator }}</td>
-      <td data-bs-toggle="offcanvas">
-        <!-- Bootstrap attribute that will trigger the offcanvas component. -->
-        <a
-          class="link-primary"
-          data-bs-toggle="offcanvas"
-          href="#{{ indicator }}"
-          role="button"
-          aria-controls="offcanvasExample"
-          >{{ title|truncate(68, False) }}</a
-        >
-        <!--  A Jinja2 filter to truncate the title to a maximum of 68 characters without breaking words in the middle. -->
-        <div
-          class="offcanvas offcanvas-start"
-          data-bs-scroll="true"
-          tabindex="-1"
-          id="{{ indicator }}"
-          aria-labelledby="offcanvasExampleLabel"
-        >
-          <!-- Offcanvas component -->
-          <div class="offcanvas-header bg-secondary">
-            <h5 class="offcanvas-title text-light" id="offcanvasExampleLabel">
-              {{ title }}
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <div>{{ series_notes }}</div>
-          </div>
-        </div>
-      </td>
-      <td class="text-truncate">{{ value }}</td>
-      <td class="text-truncate">{{ date }}</td>
-      <td class="text-truncate">{{ previous_value }}</td>
-      <td class="text-truncate">{{ previous_date }}</td>
-    </tr>
-    {% endfor %}
-  </table>
+      <!-- dashboard.html -->
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th class="text-truncate">Indicator</th>
+            <th class="text-truncate">Title</th>
+            <th class="text-truncate">Value</th>
+            <th class="text-truncate">Date</th>
+            <th class="text-truncate">Previous Value</th>
+            <th class="text-truncate">Previous Date</th>
+          </tr>
+          {% for indicator, (title, value, date, previous_value, previous_date,
+          series_notes) in standard_data.items() %}
+          <tr>
+            <td class="text-truncate">{{ indicator }}</td>
+            <td data-bs-toggle="offcanvas">
+              <!-- Bootstrap attribute that will trigger the offcanvas component. -->
+              <a
+                class="link-primary"
+                data-bs-toggle="offcanvas"
+                href="#{{ indicator }}"
+                role="button"
+                aria-controls="offcanvasExample"
+                >{{ title|truncate(68, False) }}</a
+              >
+              <!--  A Jinja2 filter to truncate the title to a maximum of 68 characters without breaking words in the middle. -->
+              <div
+                class="offcanvas offcanvas-start"
+                data-bs-scroll="true"
+                tabindex="-1"
+                id="{{ indicator }}"
+                aria-labelledby="offcanvasExampleLabel"
+              >
+                <!-- Offcanvas component -->
+                <div class="offcanvas-header bg-secondary">
+                  <h5
+                    class="offcanvas-title text-light"
+                    id="offcanvasExampleLabel"
+                  >
+                    {{ title }}
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div>{{ series_notes }}</div>
+                </div>
+              </div>
+            </td>
+            <td class="text-truncate">{{ value }}</td>
+            <td class="text-truncate">{{ date }}</td>
+            <td class="text-truncate">{{ previous_value }}</td>
+            <td class="text-truncate">{{ previous_date }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      {% if not current_user.is_authenticated %}
+      <br />
+      <p>
+        To use our economic calendar, simply sign up for an account and log in.
+        Then, you can customize your own dashboard.
+      </p>
+      <a href="{{ url_for('auth.signup') }}">
+        <button type="button" class="btn btn-primary">Sign Up</button>
+      </a>
+
+      {% endif %} {% endblock %}
+    </div>
+  </div>
 </div>
-
-{% if not current_user.is_authenticated %}
-<br />
-<p>
-  To use our economic calendar, simply sign up for an account and log in. Then,
-  you can customize your own dashboard.
-</p>
-<a href="{{ url_for('auth.signup') }}">
-  <button type="button" class="btn btn-primary">Sign Up</button>
-</a>
-
-{% endif %} {% endblock %}

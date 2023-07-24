@@ -17,6 +17,7 @@ instance/db.sqlite
 # Ignore a specific directory and its contents
 .git/
 venv/
+__pycache__/
 
 # Ignore all files with a specific extension
 *.log

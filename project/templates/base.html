@@ -12,6 +12,11 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Navigation -->
@@ -21,8 +26,9 @@
           class="nav-link"
           aria-current="page"
           href="{{ url_for('main.index') }}"
-          >Home</a
         >
+          <i class="bi bi-house"></i> Home
+        </a>
       </li>
       {% if current_user.is_authenticated %}
       <li class="nav-item dropdown">
@@ -31,24 +37,24 @@
           href="{{ url_for('main.profile') }}"
           role="button"
           data-bs-toggle="dropdown"
-          >Profile</a
+          ><i class="bi bi-person-circle"></i> Profile</a
         >
         <ul class="dropdown-menu">
           <li>
             <a class="dropdown-item" href="{{ url_for('main.profile') }}"
-              >Dashboard</a
+              ><i class="bi bi-speedometer"></i> Dashboard</a
             >
           </li>
           <li>
             <a class="dropdown-item" href="{{ url_for('auth.update_profile') }}"
-              >Edit Account</a
+              ><i class="bi bi-pencil-square"></i> Edit Account</a
             >
           </li>
           <!-- If user has created a customized dashboard, show "Edit Dashboard" button -->
           {% if current_user.indicators %}
           <li>
             <a class="dropdown-item" href="{{ url_for('main.indicator_form') }}"
-              >Edit Dashboard</a
+              ><i class="bi bi-calendar4-week"></i> Edit Dashboard</a
             >
           </li>
           {% endif %}
@@ -56,15 +62,21 @@
       </li>
       {% endif %} {% if not current_user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+        <a class="nav-link" href="{{ url_for('auth.login') }}"
+          ><i class="bi bi-box-arrow-in-right"></i> Login</a
+        >
       </li>
       {% endif %} {% if not current_user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign Up</a>
+        <a class="nav-link" href="{{ url_for('auth.signup') }}"
+          ><i class="bi bi-door-open"></i> Sign Up</a
+        >
       </li>
       {% endif %} {% if current_user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('auth.logout') }}">Log Out</a>
+        <a class="nav-link" href="{{ url_for('auth.logout') }}"
+          ><i class="bi bi-box-arrow-left"></i> Log Out</a
+        >
       </li>
       {% endif %}
     </ul>

@@ -64,24 +64,28 @@
             >
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="{{ url_for('main.profile') }}"
-                  ><i class="bi bi-speedometer"></i> Dashboard</a
+                <a
+                  class="dropdown-item text-primary"
+                  href="{{ url_for('main.profile') }}"
+                  ><i class="bi bi-speedometer text-primary"></i> Dashboard</a
                 >
               </li>
               <li>
                 <a
-                  class="dropdown-item"
+                  class="dropdown-item text-primary"
                   href="{{ url_for('auth.update_profile') }}"
-                  ><i class="bi bi-pencil-square"></i> Edit Account</a
+                  ><i class="bi bi-pencil-square text-primary"></i> Edit
+                  Account</a
                 >
               </li>
               <!-- If user has created a customized dashboard, show "Edit Dashboard" button -->
               {% if current_user.indicators %}
               <li>
                 <a
-                  class="dropdown-item"
+                  class="dropdown-item text-primary"
                   href="{{ url_for('main.indicator_form') }}"
-                  ><i class="bi bi-calendar4-week"></i> Edit Dashboard</a
+                  ><i class="bi bi-calendar4-week text-primary"></i> Edit
+                  Dashboard</a
                 >
               </li>
               {% endif %}

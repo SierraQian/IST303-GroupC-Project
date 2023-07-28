@@ -119,18 +119,19 @@ A website that shows an economic calendar that updates on a weekly basis. In the
    - Set up data source integration for retrieving economic event information (2 days)
    - Implement APIs to fetch upcoming events and their impact (3 days)
 
-<!-- 6. As an admin user, I want to be able to choose the indicators shown on the page and define the method used to calculate the expected value, so that I can customize the economic calendar according to specific requirements. (Frontend: 1 week, Backend: 1 week)
+6. As an admin user, I want to be able to choose the indicators shown on the page and define the method used to calculate the expected value, so that I can customize the economic calendar according to specific requirements. (Frontend: 1 week, Backend: 1 week)
 
    Tasks:
+
    - Frontend:
-	 - Design and implement a settings page for indicators (3 days)
-	 - Create a user interface for selecting indicators (2 days)
-	 - Implement user interface for defining calculation methods (2 days)
+   - Design and implement a settings page for indicators (3 days)
+   - Create a user interface for selecting indicators (2 days)
+   - Implement user interface for defining calculation methods (2 days)
 
    - Backend:
-	 - Develop a data model to store indicator settings (2 days)
-	 - Implement backend APIs for fetching available indicators (3 days)
-	 - Store and retrieve indicator settings from the database (2 days) -->
+   - Develop a data model to store indicator settings (2 days)
+   - Implement backend APIs for fetching available indicators (3 days)
+   - Store and retrieve indicator settings from the database (2 days)
 
 # Outline what features will be in Milestone 1.0 of your project
 

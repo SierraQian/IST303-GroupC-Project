@@ -53,6 +53,8 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 
 # Decompose your user stories into tasks
 
+# Milestone 1
+
 1. As an admin user, I want to have an account to log in to the admin system. (Frontend: 1 week, Backend: 1 week)
 
    Tasks:
@@ -91,27 +93,31 @@ A website that shows an economic calendar that updates on a weekly basis. In the
    - Set up default indicator configuration (1 day)
    - Provide APIs to fetch default indicators and upcoming events (2 days)
 
-<!-- 4. As a trader, I want to be able to manipulate and save my own dashboard to see the indicators I am interested in, allowing me to personalize my trading experience.
+# Milestone 2
+
+4. As a trader, I want to be able to manipulate and save my own dashboard to see the indicators I am interested in, allowing me to personalize my trading experience.
 
    Tasks:
+
    - Frontend:
-	 - Design and implement a customizable dashboard interface (3 days)
-	 - Allow users to select and arrange indicators on the dashboard (2 days)
+   - Design and implement a customizable dashboard interface (3 days)
+   - Allow users to select and arrange indicators on the dashboard (2 days)
 
    - Backend:
-	 - Develop backend APIs for saving and retrieving user-specific dashboard configurations (3 days)
-	 - Store and retrieve user dashboard configurations from the database (2 days)
+   - Develop backend APIs for saving and retrieving user-specific dashboard configurations (3 days)
+   - Store and retrieve user dashboard configurations from the database (2 days)
 
 5. As a trader, I want to view a list of upcoming economic events and their expected impact on the market, so that I can make informed decisions and plan my trading strategies accordingly.
 
    Tasks:
+
    - Frontend:
-	 - Design and implement a calendar view to display upcoming events (3 days)
-	 - Fetch and display event data from the backend (2 days)
+   - Design and implement a calendar view to display upcoming events (3 days)
+   - Fetch and display event data from the backend (2 days)
 
    - Backend:
-	 - Set up data source integration for retrieving economic event information (2 days)
-	 - Implement APIs to fetch upcoming events and their impact (3 days) -->
+   - Set up data source integration for retrieving economic event information (2 days)
+   - Implement APIs to fetch upcoming events and their impact (3 days)
 
 <!-- 6. As an admin user, I want to be able to choose the indicators shown on the page and define the method used to calculate the expected value, so that I can customize the economic calendar according to specific requirements. (Frontend: 1 week, Backend: 1 week)
 

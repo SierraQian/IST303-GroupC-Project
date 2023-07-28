@@ -13,36 +13,40 @@
 # IST303-GroupC-Project
 
 # Team members:
+
 Xu Chen, Shengjie Qian, Josue Carames, Nicholas Colletta, Norah Aldaghmi
 
 # PART A
 
-# App Title: Economic Calendar 
+# App Title: Economic Calendar
 
-# Concept: 
-A website that shows an economic calendar that updates on a weekly basis. In the background, it would take the most popular time series indicators from the website FRED and show various features of the most popular indicators. Some of the various factors it would list:  
+# Concept:
 
-1. Day of the week an indicator is going to be published  
-2. Frequency of the indicator in question (Daily, Weekly, Monthly, Quarterly, Annual)  
-3. Expected Value (if we can gather that data since that data is not from FRED)  
-4. Previous Value  
-5. Change in Value from previous publish  
-6. Category the series resides in  
+A website that shows an economic calendar that updates on a weekly basis. In the background, it would take the most popular time series indicators from the website FRED and show various features of the most popular indicators. Some of the various factors it would list:
+
+1. Day of the week an indicator is going to be published
+2. Frequency of the indicator in question (Daily, Weekly, Monthly, Quarterly, Annual)
+3. Expected Value (if we can gather that data since that data is not from FRED)
+4. Previous Value
+5. Change in Value from previous publish
+6. Category the series resides in
 
 # Project Requirements (expressed as user stories, have the estimated time):
-1. As an admin user, I want to have an account to login to the admin system. (frontend: 1 week, backend: 1 week)  
-2. As an admin user, I want to choose the indicators show on the page and the method of calculate the expected value. (frontend: 1 week, backend 1 week)  
-3. As a trader, I want to have an account to login, and could edit my username and password.  
-4. As a trader, I want to manipulate and save my own dashboard to see the indicators I am interested in.  
+
+1. As an admin user, I want to have an account to login to the admin system. (frontend: 1 week, backend: 1 week)
+2. As an admin user, I want to choose the indicators show on the page and the method of calculate the expected value. (frontend: 1 week, backend 1 week)
+3. As a trader, I want to have an account to login, and could edit my username and password.
+4. As a trader, I want to manipulate and save my own dashboard to see the indicators I am interested in.
 5. As a trader, I want to view a list of upcoming economic events and their expected impact on the market, so I can plan my trading strategies accordingly.
 6. As a trader without an account, I want to view the default indicators and upcoming events.
 
-# Stakeholders: 
-1. Senior Management 
-2. Operations Team 
-3. Traders and Analysts 
-4. Compliance and Risk Management 
-5. IT Department 
+# Stakeholders:
+
+1. Senior Management
+2. Operations Team
+3. Traders and Analysts
+4. Compliance and Risk Management
+5. IT Department
 6. Clients
 
 # PART B
@@ -52,37 +56,40 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 1. As an admin user, I want to have an account to log in to the admin system. (Frontend: 1 week, Backend: 1 week)
 
    Tasks:
+
    - Frontend:
-	 - Design and implement a login page (2 days)
-	 - Create a form for user authentication (2 days)
-	 - Implement user interface for account creation (2 days)
+   - Design and implement a login page (2 days)
+   - Create a form for user authentication (2 days)
+   - Implement user interface for account creation (2 days)
 
    - Backend:
-	 - Set up user authentication system (2 days)
-	 - Implement user registration and login functionality (3 days)
-	 - Store user account information securely (2 days)
+   - Set up user authentication system (2 days)
+   - Implement user registration and login functionality (3 days)
+   - Store user account information securely (2 days)
 
 2. As a trader, I want to have an account to log in and be able to edit my username and password, so that I can manage my account information securely.
 
    Tasks:
+
    - Frontend:
-	 - Create a user interface for account management (2 days)
-	 - Design and implement a form for editing username and password (2 days)
+   - Create a user interface for account management (2 days)
+   - Design and implement a form for editing username and password (2 days)
 
    - Backend:
-	 - Implement backend system for user account management (3 days)
-	 - Validate and update user account information (2 days)
+   - Implement backend system for user account management (3 days)
+   - Validate and update user account information (2 days)
 
 3. As a trader without an account, I want to view the default indicators and upcoming events, enabling me to access basic information about the economic calendar even without a registered account.
 
    Tasks:
+
    - Frontend:
-	 - Design and implement a landing page with default indicators (2 days)
-	 - Display upcoming events on the landing page (1 day)
+   - Design and implement a landing page with default indicators (2 days)
+   - Display upcoming events on the landing page (1 day)
 
    - Backend:
-	 - Set up default indicator configuration (1 day)
-	 - Provide APIs to fetch default indicators and upcoming events (2 days)
+   - Set up default indicator configuration (1 day)
+   - Provide APIs to fetch default indicators and upcoming events (2 days)
 
 <!-- 4. As a trader, I want to be able to manipulate and save my own dashboard to see the indicators I am interested in, allowing me to personalize my trading experience.
 
@@ -124,21 +131,26 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 Milestone 1.0 of the economic calendar website project will focus on delivering essential features for users to view upcoming economic events and manage their accounts. Here's an outline of the features that will be included in Milestone 1.0:
 
 1. User Registration and Authentication:
+
    - User registration functionality to allow traders and admin users to create accounts.
    - User authentication system to enable secure login and session management (including login and logout function).
 
 2. Account Management:
+
    - User profile page where traders can view and edit their account information, such as username and password.
 
 3. Default Indicators and Events:
+
    - Landing page displaying a list of default indicators and upcoming economic events.
    - Integration with a data source to retrieve and display the latest event data.
 
 4. Upcoming Events Calendar:
+
    - Calendar view to present a comprehensive list of upcoming economic events.
    - Event details page providing additional information about each event, including its expected impact on the market.
 
 5. Admin Account:
+
    - Admin user login functionality to access administrative privileges.
    - Basic admin dashboard to perform administrative tasks, such as managing user accounts and configuring indicators.
 
@@ -152,10 +164,12 @@ This Milestone 1.0 will establish the foundation of the economic calendar websit
 Iteration 1: User Registration, Authentication, and Account Management
 
 Features:
+
 - User registration and authentication
 - User profile page for account management
 
 Estimated Time:
+
 - User registration and authentication: 5 days
 - User profile page: 3 days
 
@@ -164,11 +178,13 @@ Total Days of Work: 8 days
 Iteration 2: Default Indicators, Upcoming Events, and Admin Account
 
 Features:
+
 - Landing page with default indicators and upcoming events
 - Calendar view of upcoming events
 - Admin user login and basic admin dashboard
 
 Estimated Time:
+
 - Landing page with default indicators and events: 4 days
 - Calendar view of upcoming events: 5 days
 - Admin user login and dashboard: 5 days
@@ -180,6 +196,7 @@ Overall, Milestone 1.0 will take approximately 8 days for Iteration 1 and 14 day
 # Allocate tasks to each team member and record the allocation
 
 Team Members:
+
 1. Team Member 1 (Frontend Developer)
 2. Team Member 2 (Backend Developer)
 3. Team Member 3 (UI/UX Designer)
@@ -188,14 +205,17 @@ Team Members:
 Iteration 1: User Registration, Authentication, and Account Management
 
 1. Team Member 1:
+
    - User registration and authentication (5 days)
    - Integration of frontend login and registration forms (2 days)
 
 2. Team Member 2:
+
    - Backend implementation of user registration and authentication (5 days)
    - Backend APIs for user account management (3 days)
 
 3. Team Member 3:
+
    - Design and implement the user profile page (3 days)
    - Create UI components for account management (1 day)
 
@@ -206,14 +226,17 @@ Iteration 1: User Registration, Authentication, and Account Management
 Iteration 2: Default Indicators, Upcoming Events, and Admin Account
 
 1. Team Member 1:
+
    - Design and implement the landing page with default indicators and events (4 days)
    - Integrate frontend components for the calendar view (3 days)
 
 2. Team Member 2:
+
    - Backend integration with the data source to retrieve event information (3 days)
    - Implement backend APIs for retrieving default indicators and events (4 days)
 
 3. Team Member 3:
+
    - Design and develop the calendar view of upcoming events (5 days)
    - Create UI components for displaying event details (2 days)
 
@@ -226,9 +249,11 @@ Iteration 2: Default Indicators, Upcoming Events, and Admin Account
 Assuming the following estimates for the tasks in Milestone 1.0:
 
 Iteration 1: User Registration, Authentication, and Account Management
+
 - Estimated Effort: 8 days
 
 Iteration 2: Default Indicators, Upcoming Events, and Admin Account
+
 - Estimated Effort: 14 days
 
 Here's a potential burn down chart to monitor the team's progress:
@@ -263,23 +288,28 @@ General steps:
 1. Choose a Version Control System (VCS): GitHub --> https://github.com/SierraQian/IST303-GroupC-Project
 
 2. Set Up Development Environment:
+
    - Install the necessary software and tools for development, including the programming language, frameworks, libraries, and IDEs or text editors.
    - Configure your development environment to ensure proper integration and compatibility with the chosen technologies.
 
 3. Create Project Structure:
+
    - Organize your project files and directories based on best practices and the specific requirements of your programming language or framework.
    - Set up the necessary configuration files for your project, such as package.json, pom.xml, or requirements.txt.
 
 4. Write Initial Functional Code:
+
    - Start by implementing basic functionality to demonstrate the core features of your application.
    - Build a simple working prototype or Minimum Viable Product (MVP) to test the basic functionality.
 
 5. Set Up Testing Environment:
+
    - Choose a testing framework that aligns with your project requirements and programming language.
    - Install the testing framework and any necessary testing dependencies.
    - Set up test directories and create test files to write test cases for your code.
 
 6. Write Initial Test Code:
+
    - Begin by writing basic test cases to cover the critical functionality of your application.
    - Use the testing framework to execute the test cases and verify that the code is functioning correctly.
 
@@ -289,3 +319,7 @@ General steps:
 # Part C
 
 <a href="https://docs.google.com/presentation/d/1ni1wBBxDgJWjzWgd-ISLGnQGoXP8ufWI1rC_jBP3ebY/edit?usp=sharing">Presentation</a>
+
+# Part D
+
+<a href="#">Presentation 2</a>

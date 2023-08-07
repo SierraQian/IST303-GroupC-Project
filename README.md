@@ -9,6 +9,7 @@
 7. In a terminal, you can set the FLASK_APP and FLASK_DEBUG values as follows: export FLASK_APP=project && export FLASK_DEBUG=1
 8. Run in a terminal: flask run
 9. You should be able to type in a Internet browser of your choice the following to see the web application: http://localhost:5000 or alternatively http://127.0.0.1:5000
+10. Billy please fill this out
 
 # IST303-GroupC-Project
 
@@ -37,8 +38,8 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 2. As an admin user, I want to choose the indicators show on the page and the method of calculate the expected value. (frontend: 1 week, backend 1 week)
 3. As a trader, I want to have an account to login, and could edit my username and password.
 4. As a trader, I want to manipulate and save my own dashboard to see the indicators I am interested in.
-5. As a trader, I want to view a list of upcoming economic events and their expected impact on the market, so I can plan my trading strategies accordingly.
-6. As a trader without an account, I want to view the default indicators and upcoming events.
+5. As a trader, I want to view a list of upcoming economic releases and their expected impact on the market, so I can plan my trading strategies accordingly.
+6. As a trader without an account, I want to view the default indicators and upcoming releases.
 
 # Stakeholders:
 
@@ -81,17 +82,17 @@ A website that shows an economic calendar that updates on a weekly basis. In the
    - Implement backend system for user account management (3 days)
    - Validate and update user account information (2 days)
 
-3. As a trader without an account, I want to view the default indicators and upcoming events, enabling me to access basic information about the economic calendar even without a registered account.
+3. As a trader without an account, I want to view the default indicators and upcoming releases, enabling me to access basic information about the economic calendar even without a registered account.
 
    Tasks:
 
    - Frontend:
    - Design and implement a landing page with default indicators (2 days)
-   - Display upcoming events on the landing page (1 day)
+   - Display upcoming releases on the landing page (1 day)
 
    - Backend:
    - Set up default indicator configuration (1 day)
-   - Provide APIs to fetch default indicators and upcoming events (2 days)
+   - Provide APIs to fetch default indicators and upcoming releases (2 days)
 
 # Milestone 2
 
@@ -101,23 +102,23 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 
    - Frontend:
    - Design and implement a customizable dashboard interface (3 days)
-   - Allow users to select and arrange indicators on the dashboard (2 days)
+   - Allow users to select indicators on the dashboard (2 days)
 
    - Backend:
    - Develop backend APIs for saving and retrieving user-specific dashboard configurations (3 days)
    - Store and retrieve user dashboard configurations from the database (2 days)
 
-5. As a trader, I want to view a list of upcoming economic events and their expected impact on the market, so that I can make informed decisions and plan my trading strategies accordingly.
+5. As a trader, I want to view a list of upcoming economic releases and their expected impact on the market, so that I can make informed decisions and plan my trading strategies accordingly.
 
    Tasks:
 
    - Frontend:
-   - Design and implement a calendar view to display upcoming events (3 days)
-   - Fetch and display event data from the backend (2 days)
+   - Design and implement a calendar view to display current and previous releases (3 days)
+   - Fetch and display release data from the backend (2 days)
 
    - Backend:
-   - Set up data source integration for retrieving economic event information (2 days)
-   - Implement APIs to fetch upcoming events and their impact (3 days)
+   - Set up data source integration for retrieving economic release information (2 days)
+   - Implement APIs to fetch upcoming releases and their impact (3 days)
 
 6. As an admin user, I want to be able to choose the indicators shown on the page and define the method used to calculate the expected value, so that I can customize the economic calendar according to specific requirements. (Frontend: 1 week, Backend: 1 week)
 
@@ -135,7 +136,7 @@ A website that shows an economic calendar that updates on a weekly basis. In the
 
 # Outline what features will be in Milestone 1.0 of your project
 
-Milestone 1.0 of the economic calendar website project will focus on delivering essential features for users to view upcoming economic events and manage their accounts. Here's an outline of the features that will be included in Milestone 1.0:
+Milestone 1.0 of the economic calendar website project will focus on delivering essential features for users to view upcoming economic releases and manage their accounts. Here's an outline of the features that will be included in Milestone 1.0:
 
 1. User Registration and Authentication:
 
@@ -146,15 +147,15 @@ Milestone 1.0 of the economic calendar website project will focus on delivering 
 
    - User profile page where traders can view and edit their account information, such as username and password.
 
-3. Default Indicators and Events:
+3. Default Indicators and releases:
 
-   - Landing page displaying a list of default indicators and upcoming economic events.
-   - Integration with a data source to retrieve and display the latest event data.
+   - Landing page displaying a list of default indicators and upcoming economic releases.
+   - Integration with a data source to retrieve and display the latest release data.
 
-4. Upcoming Events Calendar:
+4. Upcoming releases Calendar:
 
-   - Calendar view to present a comprehensive list of upcoming economic events.
-   - Event details page providing additional information about each event, including its expected impact on the market.
+   - Calendar view to present a comprehensive list of upcoming economic releases.
+   - release details page providing additional information about each release, including its expected impact on the market.
 
 5. Admin Account:
 
@@ -164,7 +165,7 @@ Milestone 1.0 of the economic calendar website project will focus on delivering 
 6. Responsive Design:
    - Ensuring the website is responsive and optimized for various devices and screen sizes, providing a seamless user experience on desktop and mobile platforms.
 
-This Milestone 1.0 will establish the foundation of the economic calendar website, allowing traders to view upcoming events, manage their accounts, and provide essential administrative capabilities for admin users.
+This Milestone 1.0 will establish the foundation of the economic calendar website, allowing traders to view upcoming releases, manage their accounts, and provide essential administrative capabilities for admin users.
 
 # Build the iterations (at most 2) that will compose your Milestone 1.0. Record the total days of work and the time it will take for your team to complete that work
 
@@ -182,18 +183,18 @@ Estimated Time:
 
 Total Days of Work: 8 days
 
-Iteration 2: Default Indicators, Upcoming Events, and Admin Account
+Iteration 2: Default Indicators, Upcoming releases, and Admin Account
 
 Features:
 
-- Landing page with default indicators and upcoming events
-- Calendar view of upcoming events
+- Landing page with default indicators and upcoming releases
+- Calendar view of upcoming releases
 - Admin user login and basic admin dashboard
 
 Estimated Time:
 
-- Landing page with default indicators and events: 4 days
-- Calendar view of upcoming events: 5 days
+- Landing page with default indicators and releases: 4 days
+- Calendar view of upcoming releases: 5 days
 - Admin user login and dashboard: 5 days
 
 Total Days of Work: 14 days
@@ -230,22 +231,22 @@ Iteration 1: User Registration, Authentication, and Account Management
    - Create test cases for user registration and authentication (2 days)
    - Perform functional and security testing on the login and registration functionality (2 days)
 
-Iteration 2: Default Indicators, Upcoming Events, and Admin Account
+Iteration 2: Default Indicators, Upcoming releases, and Admin Account
 
 1. Team Member 1:
 
-   - Design and implement the landing page with default indicators and events (4 days)
+   - Design and implement the landing page with default indicators and releases (4 days)
    - Integrate frontend components for the calendar view (3 days)
 
 2. Team Member 2:
 
-   - Backend integration with the data source to retrieve event information (3 days)
-   - Implement backend APIs for retrieving default indicators and events (4 days)
+   - Backend integration with the data source to retrieve release information (3 days)
+   - Implement backend APIs for retrieving default indicators and releases (4 days)
 
 3. Team Member 3:
 
-   - Design and develop the calendar view of upcoming events (5 days)
-   - Create UI components for displaying event details (2 days)
+   - Design and develop the calendar view of upcoming releases (5 days)
+   - Create UI components for displaying release details (2 days)
 
 4. Team Member 4:
    - Create test cases for the landing page and calendar view (3 days)
@@ -259,7 +260,7 @@ Iteration 1: User Registration, Authentication, and Account Management
 
 - Estimated Effort: 8 days
 
-Iteration 2: Default Indicators, Upcoming Events, and Admin Account
+Iteration 2: Default Indicators, Upcoming releases, and Admin Account
 
 - Estimated Effort: 14 days
 

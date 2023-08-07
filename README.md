@@ -120,7 +120,7 @@ A website that shows an economic calendar that updates on a weekly basis. In the
    - Set up data source integration for retrieving economic release information (2 days)
    - Implement APIs to fetch upcoming releases and their impact (3 days)
 
-6. As an admin user, I want to be able to choose the indicators shown on the page and define the method used to calculate the expected value, so that I can customize the economic calendar according to specific requirements. (Frontend: 1 week, Backend: 1 week)
+6. As an admin user, I want to be able to choose the indicators shown on the page and define the method used to calculate the different values, so that I can customize the economic calendar according to specific requirements. (Frontend: 1 week, Backend: 1 week)
 
    Tasks:
 

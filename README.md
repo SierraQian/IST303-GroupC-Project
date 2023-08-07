@@ -127,7 +127,7 @@ A website that shows an economic calendar that updates on a weekly basis. In the
    - Frontend:
    - Design and implement a settings page for indicators (3 days)
    - Create a user interface for selecting indicators (2 days)
-   - Implement user interface for defining calculation methods (2 days)
+   - Develop a chart to compare previous vs current releases (2 days)
 
    - Backend:
    - Develop a data model to store indicator settings (2 days)

@@ -9,7 +9,7 @@
 7. In a terminal, you can set the FLASK_APP and FLASK_DEBUG values as follows: export FLASK_APP=project && export FLASK_DEBUG=1
 8. Run in a terminal: flask run
 9. You should be able to type in a Internet browser of your choice the following to see the web application: http://localhost:5000 or alternatively http://127.0.0.1:5000
-10. Billy please fill this out
+10. Run the unittest to see whetehr the script is bug-free. 
 
 # IST303-GroupC-Project
 

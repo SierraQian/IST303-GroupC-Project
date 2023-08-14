@@ -31,22 +31,6 @@ def get_standard_data(indicator):
 	except (KeyError, IndexError): # When the expected key is not found or when the list index is out of range, return N/A
 		previous_data_point_value = "N/A"
 		previous_data_point_date = "N/A"
-
-	# # Leverage float_to_money()
-	# 
-	# try:
-	# 	latest_data_point_value = float_to_money(data_observations['observations'][-1]['value'])
-	# 	latest_data_point_date = data_observations['observations'][-1]['date']
-	# except (KeyError, IndexError): 
-	# 	latest_data_point_value = "N/A"
-	# 	latest_data_point_date = "N/A"
-	# 
-	# try:
-	# 	previous_data_point_value = float_to_money(data_observations['observations'][-2]['value'])
-	# 	previous_data_point_date = data_observations['observations'][-2]['date']
-	# except (KeyError, IndexError): 
-	# 	previous_data_point_value = "N/A"
-	# 	previous_data_point_date = "N/A"
 	
 	return series_title, latest_data_point_value, latest_data_point_date, previous_data_point_value, previous_data_point_date, series_notes
 
@@ -61,12 +45,3 @@ def customized_dashboard(indicator_ids, standard_data):
 	else:
 		return {indicator: get_standard_data(indicator) for indicator in indicator_ids}
 		
-# # Convert Integers into a readable format (Money)
-# 		
-# def float_to_money(amount, currency_symbol="$"):
-# 	try:
-# 		amount = float(amount)
-# 		return f"{currency_symbol}{amount:,.2f}"
-# 	except ValueError:  # raised when trying to convert a string that doesn't represent a number
-# 		return amount
-

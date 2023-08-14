@@ -1,7 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, session, flash, redirect, url_for
 from flask_login import login_required, current_user
 from . import db
-from .fred import get_standard_data, get_standard_data_dashboard, customized_dashboard#, float_to_money
+from .fred import get_standard_data, get_standard_data_dashboard, customized_dashboard
 from .models import User
 from werkzeug.security import generate_password_hash
 

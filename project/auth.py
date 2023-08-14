@@ -9,7 +9,8 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
 def login():
-    return render_template('login.html')
+    title = "Login"
+    return render_template('login.html', title=title)
 
 @auth.route('/login', methods=['POST'])
 def login_post():
@@ -31,11 +32,11 @@ def login_post():
 
 @auth.route('/signup')
 def signup():
-    return render_template('signup.html')
+    title = "Sign Up"
+    return render_template('signup.html', title = title)
 
 @auth.route('/signup', methods=['POST'])
 def signup_post():
-
     email = request.form.get('email')
     name = request.form.get('name')
     password = request.form.get('password')
@@ -63,7 +64,8 @@ def signup_post():
 @auth.route('/update-profile')
 @login_required
 def update_profile():
-    return render_template('update-profile.html')
+    title = "Update Profile"
+    return render_template('update-profile.html', title = title)
 
 @auth.route('/update-profile', methods=['POST'])
 @login_required

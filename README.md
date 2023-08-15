@@ -3,10 +3,10 @@
 1. First, start with creating the project directory: mkdir <App_Name>
 2. Next, navigate to the project directory: cd <App_Name>
 3. Pull request from git@github.com:SierraQian/IST303-GroupC-Project.git via SSH to get latest version or https://github.com/SierraQian/IST303-GroupC-Project.git via HTTPS
-4. OPTIONAL: Create a Python environment if you don’t have one: python3 -m venv venv
+4. OPTIONAL: Create a Python environment if you don’t have one: `python3 -m venv venv`
 5. OPTIONAL: Next, run the following command: source venv/bin/activate This command will activate the virtual environment.
 6. Run the following command from the project directory to install the needed packages: pip3 install -r requirements.txt
-7. In a terminal, you can set the FLASK_APP and FLASK_DEBUG values as follows: export FLASK_APP=project && export FLASK_DEBUG=1
+7. In a terminal, you can set the FLASK_APP and FLASK_DEBUG values as follows: `export FLASK_APP=project && export FLASK_DEBUG=1` (**_ If you encounter an error with the following command, type first: `export PATH="/venv/bin:$PATH"` _**)
 8. Run in a terminal: flask run
 9. You should be able to type in a Internet browser of your choice the following to see the web application: http://localhost:5000 or alternatively http://127.0.0.1:5000
 10. Run the unittest to see whether the script is bug-free by typing python3 test.py in your terminal.

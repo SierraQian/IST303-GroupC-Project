@@ -22,3 +22,4 @@ __pycache__/
 # Ignore all files with a specific extension
 *.log
 .DS_Store
+.env

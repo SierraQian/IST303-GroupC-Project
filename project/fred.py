@@ -1,7 +1,7 @@
 import requests, os
 
 def get_standard_data(indicator):
-	fred_api_key = os.getenv('FRED_API_KEY', '8bf74e8cf0c1a4bfcde0f5db0436df43')
+	fred_api_key = os.getenv('FRED_API_KEY')
 	url_series = f"https://api.stlouisfed.org/fred/series?series_id={indicator}&api_key={fred_api_key}&file_type=json" # Get an economic data series
 	url_observations = f"https://api.stlouisfed.org/fred/series/observations?series_id={indicator}&api_key={fred_api_key}&file_type=json" # Get the observations or data values for an economic data series
 	
